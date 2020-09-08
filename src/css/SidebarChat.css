@@ -1,0 +1,18 @@
+.sidebarChat {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-image: linear-gradient(to right, #421659, #b87b02) 1;
+}
+
+.sidebarChat__info {
+    margin-left: 15px;
+}
+
+.sidebarChat__info > h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
