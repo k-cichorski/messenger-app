@@ -3,9 +3,14 @@
     flex-direction: column;
     flex: 0.35;
     padding: 20px;
+}
+
+.sidebar__container {
+    height: 100%;
+    padding-right: 20px;
     border-width: 0 2px 0 0;
     border-style: solid;
-    border-image: linear-gradient(to top, #421659, #b87b02) 1;
+    border-image: linear-gradient(to top, #421659, #b87b02, #421659) 1;
 }
 
 .sidebar__header {

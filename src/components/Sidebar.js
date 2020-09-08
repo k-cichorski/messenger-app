@@ -10,36 +10,39 @@ import SidebarChat from '../components/SidebarChat';
 function Sidebar() {
     return (
         <div className="sidebar">
-            <div className="sidebar__header">
-                <Avatar src={"https://avatarfiles.alphacoders.com/250/250472.jpg"} />
-                
-                <div className="sidebar__headerRight">
-                    <IconButton>
-                        <ChatBubble />
-                    </IconButton>
+            <div className="sidebar__container">
+                <div className="sidebar__header">
+                    <Avatar src={"https://avatarfiles.alphacoders.com/250/250472.jpg"} />
 
-                    <IconButton>
-                        <MoreIcon />
-                    </IconButton>
+                    <div className="sidebar__headerRight">
+                        <IconButton>
+                            <ChatBubble />
+                        </IconButton>
 
-                    <IconButton>
-                        <ExpandIcon className={"expandSidebar"}/>
-                    </IconButton>
+                        <IconButton>
+                            <MoreIcon />
+                        </IconButton>
+
+                        <IconButton>
+                            <ExpandIcon className={"expandSidebar"}/>
+                        </IconButton>
+                    </div>
+                </div>
+
+                <div className="sidebar__search">
+                    <div className="sidebar__searchContainer">
+                        <SearchIcon />
+                        <input placeholder={"Search for someone to bother"} type={"text"}/>
+                    </div>
+                </div>
+
+                <div className="sidebar__chats">
+                    <SidebarChat />
+                    <SidebarChat />
+                    <SidebarChat />
                 </div>
             </div>
 
-            <div className="sidebar__search">
-                <div className="sidebar__searchContainer">
-                    <SearchIcon />
-                    <input placeholder={"Search for someone to bother"} type={"text"}/>
-                </div>
-            </div>
-
-            <div className="sidebar__chats">
-                <SidebarChat />
-                <SidebarChat />
-                <SidebarChat />
-            </div>
         </div>
     );
 }

@@ -3,9 +3,9 @@
     align-items: center;
     padding: 20px;
     cursor: pointer;
-    border-width: 0 0 1px 0;
+    border-width: 0 0 2px 0;
     border-style: solid;
-    border-image: linear-gradient(to right, #421659, #b87b02) 1;
+    border-image: linear-gradient(to right, #421659, #b87b02, #421659) 1;
 }
 
 .sidebarChat__info {
