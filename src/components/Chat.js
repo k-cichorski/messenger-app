@@ -4,6 +4,7 @@ import {Avatar, IconButton} from '@material-ui/core';
 import AttachmentIcon from '@material-ui/icons/Attachment';
 import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import ExpandIcon from "@material-ui/icons/ExpandMore";
 
 function Chat() {
     return (
@@ -38,9 +39,18 @@ function Chat() {
 
                 <p className="chat__message chat__userMessage">
                     <span className="chat__name">Me</span>
-                    actual message
+                    my message
                     <span className="chat__timestamp">{new Date().toUTCString()}</span>
                 </p>
+            </div>
+
+            <div className="chat__footer">
+                <form className="chat__footerForm">
+                    <input type="text" className="chat__input" placeholder="Don't be shy, say something..."/>
+                    <IconButton>
+                        <ExpandIcon className={"chat__footerFormButton"}/>
+                    </IconButton>
+                </form>
             </div>
         </div>
     )
