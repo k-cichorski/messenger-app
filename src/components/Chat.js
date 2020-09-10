@@ -36,7 +36,6 @@ function Chat() {
             setMessageInput('');
             dispatch(action);
         } else {
-            alert('You can\'t send an empty message!');
             setMessageInput('');
         }
     }
