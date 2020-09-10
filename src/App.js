@@ -9,7 +9,7 @@ function App() {
     const [, dispatch] = useStateValue();
 
     const simulateMessage = (message, timeout) => {
-        setTimeout(() => {
+        return setTimeout(() => {
             let action = {
                 type: NEW_MESSAGE,
                 message: {
@@ -23,9 +23,14 @@ function App() {
     }
 
     useEffect(() => {
-        simulateMessage('Hey!', 3000);
-        simulateMessage('Hope You like how my Messenger looks!', 6000);
-        simulateMessage('More functionality coming soon! Stay tuned! :)', 9000);
+        const msg1 = simulateMessage('Hey!', 1000);
+        const msg2 = simulateMessage('Hope You like how my Messenger looks!', 3000);
+        const msg3 = simulateMessage('More functionality coming soon! Stay tuned! :)', 5000);
+        return () => {
+            clearTimeout(msg1);
+            clearTimeout(msg2);
+            clearTimeout(msg3);
+        }
     }, []);
 
   return (

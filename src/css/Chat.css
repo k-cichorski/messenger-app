@@ -74,29 +74,35 @@
     width: max-content;
     border-radius: 25px;
     background-image: linear-gradient(45deg, #b87b02, #421659);
-    margin-bottom: 40px;
     overflow-wrap: anywhere;
     max-width: 55%;
     animation: fadein 0.3s;
 }
 
+.messageWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.userMessageWrapper {
+    align-items: flex-end;
+}
+
 .chat__userMessage {
     margin-left: auto;
+    justify-self: flex-end;
     background-image: linear-gradient(45deg, #421659, #b87b02);
 }
 
 .chat__timestamp {
-    position: absolute;
-    margin-left: 10px;
-    left: 1px;
-    bottom: -16px;
+    margin-left: 5px;
     width: max-content;
     font-size: xx-small;
 }
 
 .chat__name {
-    position: absolute;
-    top: -20px;
+    margin-left: 5px;
     font-weight: 800;
     font-size: small;
     width: max-content;
