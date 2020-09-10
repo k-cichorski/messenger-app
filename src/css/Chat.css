@@ -32,7 +32,8 @@
 .chat__body {
     margin-top: 20px;
     flex: 1;
-    padding: 30px;
+    padding-right: 20px;
+    padding-bottom: 10px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -87,10 +88,14 @@
 
 .userMessageWrapper {
     align-items: flex-end;
+    margin-left: auto;
+}
+
+.userMessageWrapper > .chat__name, .chat__timestamp {
+    margin-right: 5px;
 }
 
 .chat__userMessage {
-    margin-left: auto;
     justify-self: flex-end;
     background-image: linear-gradient(45deg, #421659, #b87b02);
 }

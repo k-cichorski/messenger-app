@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import '../css/Chat.css';
 import {Avatar, IconButton} from '@material-ui/core';
 import AttachmentIcon from '@material-ui/icons/Attachment';
@@ -12,20 +12,33 @@ import {NEW_MESSAGE} from '../store/reducer';
 function Chat() {
     const [{messages}, dispatch] = useStateValue();
     const [messageInput, setMessageInput] = useState('');
+    const messagesEndRef = useRef(null)
+
+    const scrollToBottom = () => {
+        messagesEndRef.current.scrollIntoView({ behavior: "smooth" })
+    }
+
+    useEffect(scrollToBottom, [messages]);
 
     const handleSubmit = e => {
         e.preventDefault();
-        let action = {
-            type: NEW_MESSAGE,
-            message: {
-                username: 'Me',
-                message: messageInput,
-                date: new Date().toUTCString(),
-                isSender: true
+        let messageToSend = messageInput.trim();
+        if (messageToSend.length !== 0) {
+            let action = {
+                type: NEW_MESSAGE,
+                message: {
+                    username: 'Me',
+                    message: messageToSend,
+                    date: new Date().toUTCString(),
+                    isSender: true
+                }
             }
+            setMessageInput('');
+            dispatch(action);
+        } else {
+            alert('You can\'t send an empty message!');
+            setMessageInput('');
         }
-        setMessageInput('');
-        dispatch(action);
     }
 
     return (
@@ -54,6 +67,8 @@ function Chat() {
             <div className="chat__body">
 
                 {messages.map((message, index) => <Message key={index} message={message} /> )}
+
+                <div ref={messagesEndRef} />
 
             </div>
 
